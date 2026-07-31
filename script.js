@@ -17,12 +17,12 @@ import { outsideGrid } from './grid.js'
 let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('game-board')
-const scoreBoard = document.getElementById('score-board')
+const scoreBoard = document.getElementById('score')
 
 function main(currentTime) {
     if (gameOver) {
         if (confirm("You died. Press ok to Restart.")) {
-            window.location = '/home.html'
+            window.location.reload()
         }
         return
 
@@ -37,6 +37,10 @@ function main(currentTime) {
     draw()
 }
 window.requestAnimationFrame(main)
+
+// Wire restart button to reload the game
+const restartBtn = document.getElementById('restart')
+if (restartBtn) restartBtn.addEventListener('click', () => window.location.reload())
 
 function update() {
     updateSnake()

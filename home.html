@@ -2,18 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>snake Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer type="module"></script>
 </head>
 
 <body>
-    <h3>Score Board</h3>
-    <div id="score-board"></div>
-    <div id="game-board"></div>
-</body>
+    <div class="game-container">
+        <div class="hud">
+            <div class="hud-left">
+                <button id="restart" class="ghost">Restart</button>
+            </div>
+            <div class="hud-center">
+                <div class="score-display">Score <span id="score">0</span></div>
+            </div>
+            <div class="hud-right"></div>
+        </div>
 
+        <div class="board-area">
+            <main id="game-board" aria-label="Game board"></main>
+        </div>
+
+        <div class="controls-overlay" aria-hidden="false">
+            <div class="dpad">
+                   <div class="dpad-row">
+                    <button id="dummy" class="btn-dir" hidden>Restart</button>
+                    <div class="spacer"></div>
+                    <button id="up" class="btn-dir">▲</button>
+                   </div>
+                
+                <div class="dpad-row">
+                    <button id="left" class="btn-dir">◀</button>
+                    <div class="spacer"></div>
+                    <button id="down" class="btn-dir">▼</button>
+                     <div class="spacer"></div>
+                    <button id="right" class="btn-dir">▶</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
 
 </html>
